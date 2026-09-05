@@ -14,7 +14,6 @@
  */
 
 const http = require('http');
-const https = require('https');
 
 const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:5000';
 const DEVICE_ID = process.env.DEVICE_ID || 'ROOMGUARD-01';
@@ -22,9 +21,7 @@ const DEVICE_API_KEY = process.env.DEVICE_API_KEY || 'rg_live_9f83b4e72a';
 
 const parsedUrl = new URL(API_BASE_URL);
 const HOST = parsedUrl.hostname;
-const IS_HTTPS = parsedUrl.protocol === 'https:';
-const PORT = parsedUrl.port || (IS_HTTPS ? 443 : 5000);
-const transport = IS_HTTPS ? https : http;
+const PORT = parsedUrl.port || 5000;
 
 let uptimeSeconds = 0;
 
@@ -41,7 +38,7 @@ const sendRequest = (method, path, body = null) => {
       }
     };
 
-    const req = transport.request(options, (res) => {
+    const req = http.request(options, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
@@ -54,7 +51,7 @@ const sendRequest = (method, path, body = null) => {
     });
 
     req.on('error', (err) => {
-      reject(new Error(`${err.code || 'ERROR'}: ${err.message || 'Unknown connection error'}`));
+      reject(err);
     });
 
     if (body) {
