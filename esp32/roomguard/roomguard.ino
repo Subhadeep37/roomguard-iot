@@ -64,7 +64,7 @@ const char* WIFI_PASSWORD       = "ChickenChudino@69";
 // For cloud/production: Use full domain (e.g. "https://your-app.onrender.com")
 const char* API_BASE_URL        = "https://roomguard-iot.onrender.com";
 const char* DEVICE_ID           = "ROOMGUARD-01";
-const char* DEVICE_API_KEY      = "YOUR_DEVICE_API_KEY"; // Set matching DEVICE_API_KEY from backend .env
+const char* DEVICE_API_KEY      = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z"; // Set matching DEVICE_API_KEY from backend .env
 const char* FIRMWARE_VERSION    = "1.0.0";
 
 // Polling & Transmission Intervals (in milliseconds)
