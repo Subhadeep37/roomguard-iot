@@ -56,13 +56,13 @@
 // =====================================================================================
 
 // Wi-Fi Network Credentials
-const char* WIFI_SSID           = "YOUR_WIFI_SSID";
-const char* WIFI_PASSWORD       = "YOUR_WIFI_PASSWORD";
+const char* WIFI_SSID           = "IITHarinchawrah";
+const char* WIFI_PASSWORD       = "ChickenChudino@69";
 
 // Backend API Server Configuration
 // For local testing: Use computer's local IP (e.g. "http://192.168.1.100:5000")
 // For cloud/production: Use full domain (e.g. "https://your-app.onrender.com")
-const char* API_BASE_URL        = "http://192.168.1.100:5000";
+const char* API_BASE_URL        = "https://roomguard-iot.onrender.com";
 const char* DEVICE_ID           = "ROOMGUARD-01";
 const char* DEVICE_API_KEY      = "YOUR_DEVICE_API_KEY"; // Set matching DEVICE_API_KEY from backend .env
 const char* FIRMWARE_VERSION    = "1.0.0";
